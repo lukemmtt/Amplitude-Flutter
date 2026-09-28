@@ -39,6 +39,7 @@ void main() {
       expect(config.identifyBatchIntervalMillis,
           Constants.identifyBatchIntervalMillis);
       expect(config.migrateLegacyData, true);
+      expect(config.enableAutoCaptureRemoteConfig, true);
       expect(config.deviceId, isNull);
       expect(config.locationListening, true);
       expect(config.useAdvertisingIdForDeviceId, false);
@@ -75,6 +76,7 @@ void main() {
       expect(map['identifyBatchIntervalMillis'],
           Constants.identifyBatchIntervalMillis);
       expect(map['migrateLegacyData'], true);
+      expect(map['enableAutoCaptureRemoteConfig'], true);
       expect(map['deviceId'], isNull);
       expect(map['locationListening'], true);
       expect(map['useAdvertisingIdForDeviceId'], false);
@@ -247,6 +249,7 @@ void main() {
         flushEventsOnClose: true,
         identifyBatchIntervalMillis: 2000,
         migrateLegacyData: true,
+        enableAutoCaptureRemoteConfig: false,
         deviceId: 'custom_device_id',
         locationListening: true,
         useAdvertisingIdForDeviceId: true,
@@ -277,6 +280,7 @@ void main() {
       expect(customConfig.flushEventsOnClose, true);
       expect(customConfig.identifyBatchIntervalMillis, 2000);
       expect(customConfig.migrateLegacyData, true);
+      expect(customConfig.enableAutoCaptureRemoteConfig, false);
       expect(customConfig.deviceId, 'custom_device_id');
       expect(customConfig.locationListening, true);
       expect(customConfig.useAdvertisingIdForDeviceId, true);
