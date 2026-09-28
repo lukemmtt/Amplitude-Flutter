@@ -98,11 +98,14 @@ void AmplitudeInstance::Track(const nlohmann::json& event) {
   nlohmann::json enriched = event;
   int64_t now = CurrentTimeMillis();
 
-  if (config_.default_tracking_sessions &&
-      (now - last_event_time_) > config_.min_time_between_sessions_millis) {
-    TrackSessionEnd(last_event_time_);
+  if ((now - last_event_time_) > config_.min_time_between_sessions_millis) {
+    if (config_.default_tracking_sessions) {
+      TrackSessionEnd(last_event_time_);
+    }
     session_id_ = now;
-    TrackSessionStart();
+    if (config_.default_tracking_sessions) {
+      TrackSessionStart();
+    }
     last_event_time_ = now;
     PersistIdentity();
   } else {
@@ -172,11 +175,14 @@ void AmplitudeInstance::SetOptOut(bool opt_out) { config_.opt_out = opt_out; }
 void AmplitudeInstance::OnAppLifecycleResumed() {
   int64_t now = CurrentTimeMillis();
 
-  if (config_.default_tracking_sessions &&
-      (now - last_event_time_) > config_.min_time_between_sessions_millis) {
-    TrackSessionEnd(last_event_time_);
+  if ((now - last_event_time_) > config_.min_time_between_sessions_millis) {
+    if (config_.default_tracking_sessions) {
+      TrackSessionEnd(last_event_time_);
+    }
     session_id_ = now;
-    TrackSessionStart();
+    if (config_.default_tracking_sessions) {
+      TrackSessionStart();
+    }
   }
   last_event_time_ = now;
   PersistIdentity();
@@ -197,10 +203,8 @@ void AmplitudeInstance::OnAppLifecyclePaused() {
     TrackInternal(event);
   }
 
-  if (config_.default_tracking_sessions) {
-    last_event_time_ = CurrentTimeMillis();
-    PersistIdentity();
-  }
+  last_event_time_ = CurrentTimeMillis();
+  PersistIdentity();
 
   if (config_.flush_events_on_close) {
     event_queue_->Flush();

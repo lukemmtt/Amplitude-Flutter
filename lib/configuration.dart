@@ -126,6 +126,12 @@ class Configuration {
   /// See platform-specific documentation for more information.
   bool migrateLegacyData;
 
+  /// Apple specific
+  ///
+  /// Whether Amplitude may remotely add autocapture options after startup.
+  /// Disable this when local autocapture choices must remain authoritative.
+  bool enableAutoCaptureRemoteConfig;
+
   /// Applicable to Web and Android
   ///
   /// The device ID to use for this device. If no deviceID is provided one will be generated automatically.
@@ -233,6 +239,7 @@ class Configuration {
     this.flushEventsOnClose = true,
     this.identifyBatchIntervalMillis = Constants.identifyBatchIntervalMillis,
     this.migrateLegacyData = true,
+    this.enableAutoCaptureRemoteConfig = true,
     this.locationListening = true,
     this.useAdvertisingIdForDeviceId = false,
     this.useAppSetIdForDeviceId = false,
@@ -311,6 +318,7 @@ class Configuration {
       'flushEventsOnClose': flushEventsOnClose,
       'identifyBatchIntervalMillis': identifyBatchIntervalMillis,
       'migrateLegacyData': migrateLegacyData,
+      'enableAutoCaptureRemoteConfig': enableAutoCaptureRemoteConfig,
       'locationListening': locationListening,
       'useAdvertisingIdForDeviceId': useAdvertisingIdForDeviceId,
       'useAppSetIdForDeviceId': useAppSetIdForDeviceId,

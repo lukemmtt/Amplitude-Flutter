@@ -93,7 +93,7 @@ All 14 method channel calls are implemented with identical semantics to iOS/Andr
 | `minTimeBetweenSessionsMillis` | Yes | Yes | Yes | Yes | Default: 300000 (5 min) |
 | `enableCoppaControl` | Yes | Yes | Yes | No | Strips IP, disables geo fields |
 | `flushEventsOnClose` | Yes | Yes | Yes | No | Flushes on pause/destroy |
-| `defaultTracking.sessions` | Yes | Yes | Yes | Yes | Start/End Session events |
+| `defaultTracking.sessions` | Yes | Yes | Yes | Yes | Start/End Session events; session IDs continue rotating when disabled |
 | `defaultTracking.appLifecycles` | Yes | Yes | Yes | No | Opened/Backgrounded events |
 | `trackingOptions.*` | Yes | Yes | Yes | Partial | Controls which fields are sent |
 | `identifyBatchIntervalMillis` | No | Yes | Yes | No | Not yet implemented |

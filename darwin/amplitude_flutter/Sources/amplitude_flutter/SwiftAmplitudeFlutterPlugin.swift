@@ -190,6 +190,8 @@ internal var pluginInstance: SwiftAmplitudeFlutterPlugin?
 
         let instanceName = args["instanceName"] as? String ?? Constants.Configuration.DEFAULT_INSTANCE
         let migrateLegacyData = args["migrateLegacyData"] as? Bool ?? true
+        let enableAutoCaptureRemoteConfig =
+            args["enableAutoCaptureRemoteConfig"] as? Bool ?? true
 
         // The Dart Configuration constructor resolves the effective autocapture
         // value: a map for AutocaptureOptions/AutocaptureEnabled (derived from
@@ -215,7 +217,8 @@ internal var pluginInstance: SwiftAmplitudeFlutterPlugin?
             apiKey: apiKey,
             instanceName: instanceName,
             autocapture: autocaptureOptions,
-            migrateLegacyData: migrateLegacyData)
+            migrateLegacyData: migrateLegacyData,
+            enableAutoCaptureRemoteConfig: enableAutoCaptureRemoteConfig)
 
         if let flushQueueSize = args["flushQueueSize"] as? Int {
             configuration.flushQueueSize = flushQueueSize
