@@ -78,6 +78,7 @@ void main() {
     'flushEventsOnClose': true,
     'identifyBatchIntervalMillis': 30 * 1000,
     'migrateLegacyData': true,
+    'enableAutoCaptureRemoteConfig': true,
     'locationListening': true,
     'useAdvertisingIdForDeviceId': false,
     'useAppSetIdForDeviceId': false,
