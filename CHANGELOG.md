@@ -1,3 +1,22 @@
+## [4.8.1](https://github.com/amplitude/Amplitude-Flutter/compare/v4.8.0...v4.8.1) (2026-10-21)
+
+
+### Bug Fixes
+
+* **android:** skip kotlin-android when AGP provides built-in Kotlin ([#326](https://github.com/amplitude/Amplitude-Flutter/issues/326)) ([4f9f6aa](https://github.com/amplitude/Amplitude-Flutter/commit/4f9f6aa226c59afc5caef987f0c38acfd4c2bac3)), closes [#306](https://github.com/amplitude/Amplitude-Flutter/issues/306)
+
+# [4.8.0](https://github.com/amplitude/Amplitude-Flutter/compare/v4.7.3...v4.8.0) (2026-10-20)
+
+
+### Bug Fixes
+
+* make isBuilt reflect platform initialization ([#324](https://github.com/amplitude/Amplitude-Flutter/issues/324)) ([c164c1c](https://github.com/amplitude/Amplitude-Flutter/commit/c164c1c16d69511e340cc6188185e87d613d51cf))
+
+
+### Features
+
+* **android:** support API 36 with updated build tooling ([#320](https://github.com/amplitude/Amplitude-Flutter/issues/320)) ([ef0ed06](https://github.com/amplitude/Amplitude-Flutter/commit/ef0ed0636ad06d6b9139d2ebd24f3b3808ef2395))
+
 ## [4.7.3](https://github.com/amplitude/Amplitude-Flutter/compare/v4.7.2...v4.7.3) (2026-10-05)
 
 
